@@ -26,6 +26,7 @@ public class RNPushNotificationAttributes {
     private static final String NUMBER = "number";
     private static final String SOUND = "sound";
     private static final String COLOR = "color";
+	private static final String CHANNEL_NAME = "channelName";
     private static final String GROUP = "group";
     private static final String USER_INTERACTION = "userInteraction";
     private static final String PLAY_SOUND = "playSound";
@@ -49,6 +50,7 @@ public class RNPushNotificationAttributes {
     private final String subText;
     private final String number;
     private final String sound;
+	private final String channelName;
     private final String color;
     private final String group;
     private final boolean userInteraction;
@@ -74,6 +76,7 @@ public class RNPushNotificationAttributes {
         subText = bundle.getString(SUB_TEXT);
         number = bundle.getString(NUMBER);
         sound = bundle.getString(SOUND);
+		channelName = bundle.getString(CHANNEL_NAME);
         color = bundle.getString(COLOR);
         group = bundle.getString(GROUP);
         userInteraction = bundle.getBoolean(USER_INTERACTION);
@@ -101,6 +104,7 @@ public class RNPushNotificationAttributes {
             subText = jsonObject.has(SUB_TEXT) ? jsonObject.getString(SUB_TEXT) : null;
             number = jsonObject.has(NUMBER) ? jsonObject.getString(NUMBER) : null;
             sound = jsonObject.has(SOUND) ? jsonObject.getString(SOUND) : null;
+			channelName = jsonObject.has(CHANNEL_NAME) ? jsonObject.getString(CHANNEL_NAME) : null;
             color = jsonObject.has(COLOR) ? jsonObject.getString(COLOR) : null;
             group = jsonObject.has(GROUP) ? jsonObject.getString(GROUP) : null;
             userInteraction = jsonObject.has(USER_INTERACTION) ? jsonObject.getBoolean(USER_INTERACTION) : false;
@@ -187,6 +191,7 @@ public class RNPushNotificationAttributes {
         bundle.putString(NUMBER, number);
         bundle.putString(SOUND, sound);
         bundle.putString(COLOR, color);
+		bundle.putString(CHANNEL_NAME, channelName);
         bundle.putString(GROUP, group);
         bundle.putBoolean(USER_INTERACTION, userInteraction);
         bundle.putBoolean(PLAY_SOUND, playSound);
@@ -216,6 +221,7 @@ public class RNPushNotificationAttributes {
             jsonObject.put(NUMBER, number);
             jsonObject.put(SOUND, sound);
             jsonObject.put(COLOR, color);
+			jsonObject.put(CHANNEL_NAME, channelName);
             jsonObject.put(GROUP, group);
             jsonObject.put(USER_INTERACTION, userInteraction);
             jsonObject.put(PLAY_SOUND, playSound);
@@ -250,6 +256,7 @@ public class RNPushNotificationAttributes {
                 ", subText='" + subText + '\'' +
                 ", number='" + number + '\'' +
                 ", sound='" + sound + '\'' +
+				", channelName='" + channelName + '\'' +
                 ", color='" + color + '\'' +
                 ", group='" + group + '\'' +
                 ", userInteraction=" + userInteraction +
